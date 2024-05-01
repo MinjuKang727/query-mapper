@@ -13,3 +13,5 @@ spring:
     console: # H2 DB? ??? ??? ? ?? ??
       enabled: true           # H2 Console ?? ??
       path: /h2-console       # H2 Console ?? ??
+
+mybatis.config-location: classpath:mybatis-config.xml

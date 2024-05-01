@@ -13,37 +13,16 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.thesun4sky.querymapping.domain;
+package com.thesun4sky.querymapper.mapper;
 
-import java.io.Serializable;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
-public class User implements Serializable {
+import com.thesun4sky.querymapper.domain.User;
 
-  private static final long serialVersionUID = 1L;
+@Mapper
+public interface UserMapper {
 
-  private Long id;
-
-  private String name;
-
-  public Long getId() {
-    return this.id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  @Override
-  public String toString() {
-    return getId() + "," + getName();
-  }
+  User selectUserById(@Param("id") Long id);
 
 }
