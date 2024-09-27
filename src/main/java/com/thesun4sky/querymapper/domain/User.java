@@ -17,6 +17,7 @@ package com.thesun4sky.querymapper.domain;
 
 import java.io.Serializable;
 
+// Serializable을 구현해야 값을 받아서 넣어줄 수 있음.  (Serializable : 직렬화 가능 객체)
 public class User implements Serializable {
 
   private static final long serialVersionUID = 1L;

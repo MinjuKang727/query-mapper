@@ -25,10 +25,19 @@ public class UserDao {
 
   private final SqlSession sqlSession;
 
+  // SqlSession 생성자 주입
   public UserDao(SqlSession sqlSession) {
     this.sqlSession = sqlSession;
   }
 
+  /*
+  selectOne() 메서드 실행
+   - 첫번째 매개변수, Statement : 쿼리 id와 매핑되어 쿼리를 실행
+   - 두번째 파라미터, ... : 쿼리에 들어가는 파라미터
+
+   쿼리 실행 결과 응답 객체를 어떻게 User에 매핑하나요?
+    : /resources/mapper/UserMapper.xml 파일의 resultType = "User" 설정을 해 주어야 합니다.
+   */
   public User selectUserById(long id) {
     return this.sqlSession.selectOne("selectUserById", id);
   }
